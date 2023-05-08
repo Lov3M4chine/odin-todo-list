@@ -7,7 +7,57 @@
   <link href="./styles.css" rel="stylesheet">
 </head>
 <body>
-  <div id="app" class="text-blue-700">Hello World</div>
+  <div class="flex flex-col">
+
+    <!-- Header -->
+    <div class="bg-red-800 min-w-full">
+      <p class="text-center w-full">Todo List</p>
+    </div>
+
+    <!-- Content -->
+    <div class="flex">
+
+      <!-- Left Container -->
+      <div class="bg-blue-900">
+        <!-- Filter Buttons -->
+        <div class="flex flex-col">
+          <button>Today</button>
+          <button>This Week</button>
+          <button>This Month</button>
+        </div>
+        <!-- Projects -->
+        <div class="bg-pink-900 min-h-screen">
+          <!-- Add Projects -->
+          <div class="flex">
+            <p>Projects</p>
+            <button>+ Add</button>
+          </div>
+          <!-- Projects List -->
+          <div class="flex flex-col">
+            <button>Project 1</button>
+            <button>Project 2</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Container -->
+      <div class="bg-green-900 flex-grow">
+        <!-- Add Task -->
+        <div class="flex">
+          <p>All</p>
+          <button>+ Add Task</button>
+        </div>
+        <!-- Task List -->
+        <div class="flex flex-col">
+          <button class="text-left">Task 1</button>
+          <button class="text-left">Task 2</button>
+          <button class="text-left">Task 3</button>
+        </div>
+      </div>
+      
+   </div>
+
+  </div>
   <script src="main.js"></script>
 </body>
 </html>
