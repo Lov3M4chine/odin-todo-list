@@ -1,2 +1,2 @@
 # odin-todo-list
-This is a simple todo list application that allows users to create, update, and delete tasks.
+This is a simple todo list application that allows users to create, update, and delete tasks. It will display a list of tasks, along with their status (completed or not) and priority level. Users can add new tasks by typing them into an input field, and can edit or delete existing tasks by clicking on them. The application will also allow users to filter the list by status and priority, and will persist the task data to local storage so that it is not lost when the browser is closed.
