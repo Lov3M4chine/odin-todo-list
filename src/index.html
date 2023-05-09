@@ -42,19 +42,40 @@
 
       <!-- Right Container -->
       <div class="bg-green-900 flex-grow">
+        <!-- Add Task Form -->
+        <form id="task-form" class="flex flex-col items-center justify-center absolute bg-slate-900 p-10 z-10 hidden">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required class="form-input"><br>
+        
+          <label for="description">Description:</label>
+          <textarea id="description" name="description" class="form-input"></textarea><br>
+        
+          <label for="due-date">Due Date:</label>
+          <input type="date" id="due-date" name="due-date" required class="form-input"><br>
+        
+          <label for="priority">Priority:</label>
+          <select id="priority" name="priority" class="form-input">
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select><br>
+        
+          <label for="project-name">Project Name:</label>
+          <input type="text" id="project-name" name="project-name" class="form-input"><br>
+        
+          <button id="add-task" type="submit" class="button">Add Task</button>
+        </form>
+        
         <!-- Add Task -->
         <div class="flex">
           <p>All</p>
-          <button>+ Add Task</button>
+          <button id="add-task">+ Add Task</button>
         </div>
         <!-- Task List -->
-        <div class="flex flex-col">
-          <button class="text-left">Task 1</button>
-          <button class="text-left">Task 2</button>
-          <button class="text-left">Task 3</button>
+        <div id="task-list" class="flex flex-col">
         </div>
       </div>
-      
+
    </div>
 
   </div>
