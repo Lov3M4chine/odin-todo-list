@@ -1,4 +1,4 @@
-import RendererInterface from "./interfaces/RendererInterface.js";
+import RendererInterface from "../interfaces/RendererInterface.js";
 
 export default class HtmlRenderer extends RendererInterface {
   render(tasks, container, formatter) {

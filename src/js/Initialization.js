@@ -1,6 +1,6 @@
 import LocalStorageTaskRepository from "./data/LocalStorageTaskRepository.js";
-import HtmlFormatter from "./HtmlFormatter.js";
-import HtmlRenderer from "./HtmlRenderer.js";
+import HtmlFormatter from "./formatters/HtmlFormatter.js";
+import HtmlRenderer from "./renderers/HtmlRenderer.js";
 import TaskFormHandler from "./forms/TaskFormHandler.js";
 import TaskFormProcessor from "./forms/TaskFormProcessor.js";
 

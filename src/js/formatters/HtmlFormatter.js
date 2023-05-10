@@ -1,4 +1,4 @@
-import FormatterInterface from "./interfaces/FormatterInterface.js";
+import FormatterInterface from "../interfaces/FormatterInterface.js";
 
 export default class HtmlFormatter extends FormatterInterface {
   format(task) {
