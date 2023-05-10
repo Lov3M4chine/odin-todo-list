@@ -1,4 +1,4 @@
-import TaskRepositoryInterface from "../interfaces/TaskRepositoryInterface.js";
+import TaskRepositoryInterface from "../interfaces/data/TaskRepositoryInterface.js";
 
 export default class LocalStorageTaskRepository extends TaskRepositoryInterface {
   constructor() {

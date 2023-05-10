@@ -1,6 +1,6 @@
-import RendererInterface from "../interfaces/RendererInterface.js";
+import TaskListRendererInterface from "../interfaces/renderers/TaskListRendererInterface.js";
 
-export default class HtmlRenderer extends RendererInterface {
+export default class TaskListRenderer extends TaskListRendererInterface {
   render(tasks, container, formatter) {
     container.innerHTML = "";
     tasks.forEach((task) => {
