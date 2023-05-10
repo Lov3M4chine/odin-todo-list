@@ -1,3 +1,12 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@font-face {
+    font-family: swankyMooMoo;
+    src: url(../fonts/SwankyandMooMoo-Regular.woff2);
+}
+@font-face {
+    font-family: patrickHand;
+    src: url(../fonts/PatrickHand-Regular.woff2);
+}

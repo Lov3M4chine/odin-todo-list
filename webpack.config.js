@@ -5,8 +5,8 @@ const TerserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
-  watch: true,
+  mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
+  watch: process.env.NODE_ENV !== 'production',
   entry: './src/js/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -19,6 +19,9 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
+          options: {
+            sourceMaps: process.env.NODE_ENV !== 'production',
+          },
         },
       },
       {
@@ -30,7 +33,12 @@ module.exports = {
               publicPath: '',
             },
           },
-          'css-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: process.env.NODE_ENV !== 'production',
+            },
+          },
           {
             loader: 'postcss-loader',
             options: {
@@ -47,6 +55,13 @@ module.exports = {
           path.resolve(__dirname, 'src/styles')
         ]
       },
+      {
+        test: /\.(png|jpe?g|gif|svg|webp)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'images/[name].[ext]'
+        }
+      }
     ],
   },  
   resolve: {
@@ -60,7 +75,7 @@ module.exports = {
       template: './src/index.html',
       filename: 'index.html',
     }),
-    new TerserPlugin(),
+    ...(process.env.NODE_ENV === 'production' ? [new TerserPlugin()] : []),
     new CleanWebpackPlugin(),
 ],
 };

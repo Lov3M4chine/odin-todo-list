@@ -37,3 +37,7 @@ IFormHandler and TaskFormHandler: These two classes represent an abstraction (in
 Initialization.js: This module initializes and ties together all the components. It creates instances of the TaskRepository, Formatter, Renderer, and FormHandler, and then passes these instances to the Form.js module. By passing the instances as arguments, we adhere to the Dependency Inversion Principle, which makes our code more flexible and maintainable.
 
 Form.js: The processTaskForm function in this module handles form submission, creating new tasks, and updating the task list. It receives instances of the TaskRepository, Renderer, Formatter, and FormHandler from the Initialization.js module, which allows it to be more flexible and independent of specific implementations.
+
+Credits
+Patterns:
+https://www.toptal.com/designers/subtlepatterns

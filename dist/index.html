@@ -6,30 +6,30 @@
   <title>Todo List</title>
 <script defer src="main.js"></script><link href="styles.css" rel="stylesheet"></head>
 <body>
-  <div class="flex flex-col">
+  <div class="flex flex-col bg-background bg-rough-diagonal bg-repeat font-patrickHand">
 
     <!-- Header -->
-    <div class="bg-red-800 min-w-full">
-      <p class="text-center w-full">Todo List</p>
+    <div class="min-w-full text-slate-900">
+      <p class="text-center w-full text-3xl">Todo List</p>
     </div>
 
     <!-- Content -->
-    <div class="flex">
+    <div class="flex gap-3">
 
       <!-- Left Container -->
-      <div class="bg-blue-900">
+      <div class="text-slate-900 flex flex-col gap-2">
         <!-- Filter Buttons -->
-        <div class="flex flex-col">
+        <div class="flex flex-col justify-center items-center border-slate-900 border-2 rounded">
+          <p class="underline">Filter:</p>
           <button>Today</button>
           <button>This Week</button>
           <button>This Month</button>
         </div>
         <!-- Projects -->
-        <div class="bg-pink-900 min-h-screen">
+        <div class="flex flex-col justify-start items-center border-slate-900 border-2 rounded min-h-screen">
           <!-- Add Projects -->
           <div class="flex">
-            <p>Projects</p>
-            <button>+ Add</button>
+            <p class="underline">Projects:</p>
           </div>
           <!-- Projects List -->
           <div class="flex flex-col">
@@ -40,7 +40,7 @@
       </div>
 
       <!-- Right Container -->
-      <div class="bg-green-900 flex-grow">
+      <div class="flex-grow p-3 bg-background bg-groove-paper bg-repeat rounded">
         <!-- Add Task Form -->
         <form id="task-form" class="flex flex-col items-center justify-center absolute bg-slate-900 p-10 z-10 hidden">
           <label for="name">Name:</label>
@@ -66,12 +66,16 @@
         </form>
         
         <!-- Add Task -->
-        <div class="flex">
-          <p>All</p>
-          <button id="add-task-button">+ Add Task</button>
+        <div class="flex justify-between text-lg">
+          <p class="underline">All Tasks</p>
+          <button id="add-task-button" class="border-slate-900 border-2 rounded">+ Add Task</button>
         </div>
         <!-- Task List -->
-        <div id="task-list" class="flex flex-col">
+        <div id="task-list" class="flex flex-col p-2">
+          <div class="flex justify-between bg-background bg-denim bg-repeat text-white p-1">
+            <p class="font-swankyMooMoo">Clean House</p>
+            <p>Due: 2023-05-09</p>
+          </div>
         </div>
       </div>
 
