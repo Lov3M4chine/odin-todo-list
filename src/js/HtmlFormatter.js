@@ -1,6 +1,6 @@
-import InterfaceFormatter from "./InterfaceFormatter.js";
+import FormatterInterface from "./interfaces/FormatterInterface.js";
 
-export default class HtmlFormatter extends InterfaceFormatter {
+export default class HtmlFormatter extends FormatterInterface {
   format(task) {
         const taskHtml = document.createElement("div");
         taskHtml.classList.add("flex", "justify-between");

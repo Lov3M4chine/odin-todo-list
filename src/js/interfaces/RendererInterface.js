@@ -1,4 +1,4 @@
-export default class InterfaceRenderer {
+export default class RendererInterface {
     render(tasks, container, formatter) {
       throw new Error("Not implemented");
     }

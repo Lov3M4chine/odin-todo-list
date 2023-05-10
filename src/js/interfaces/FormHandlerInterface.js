@@ -1,4 +1,4 @@
-export default class InterfaceFormHandler {
+export default class FormHandlerInterface {
     show() {
       throw new Error("Not implemented");
     }

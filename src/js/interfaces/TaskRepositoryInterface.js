@@ -1,4 +1,4 @@
-export default class InterfaceTaskRepository {
+export default class TaskRepositoryInterface {
     addTask(task) {
       throw new Error("Not implemented");
     }

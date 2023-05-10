@@ -1,4 +1,4 @@
-export default class InterfaceFormatter {
+export default class FormatterInterface {
     format(task) {
       throw new Error("Not implemented");
     }

@@ -1,6 +1,6 @@
-import InterfaceRenderer from "./InterfaceRenderer.js";
+import RendererInterface from "./interfaces/RendererInterface.js";
 
-export default class HtmlRenderer extends InterfaceRenderer {
+export default class HtmlRenderer extends RendererInterface {
   render(tasks, container, formatter) {
     container.innerHTML = "";
     tasks.forEach((task) => {

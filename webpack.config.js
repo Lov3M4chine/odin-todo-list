@@ -7,7 +7,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
   mode: 'development',
   watch: true,
-  entry: './src/index.js',
+  entry: './src/js/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js',
@@ -31,11 +31,24 @@ module.exports = {
             },
           },
           'css-loader',
-          'postcss-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [
+                  require('tailwindcss'),
+                  require('autoprefixer'),
+                ],
+              },
+            },
+          },
         ],
+        include: [
+          path.resolve(__dirname, 'src/styles')
+        ]
       },
     ],
-  },
+  },  
   resolve: {
     extensions: ['.js']
   },

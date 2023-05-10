@@ -1,6 +1,6 @@
-import InterfaceFormHandler from "./InterfaceFormHandler.js";
+import FormHandlerInterface from "../interfaces/FormHandlerInterface.js";
 
-export default class TaskFormHandler extends InterfaceFormHandler {
+export default class TaskFormHandler extends FormHandlerInterface {
   constructor(formId) {
     super();
     this.form = document.getElementById(formId);

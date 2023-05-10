@@ -1,6 +1,6 @@
-import InterfaceTaskRepository from "./InterfaceTaskRepository.js";
+import TaskRepositoryInterface from "../interfaces/TaskRepositoryInterface.js";
 
-export default class LocalStorageTaskRepository extends InterfaceTaskRepository {
+export default class LocalStorageTaskRepository extends TaskRepositoryInterface {
   constructor() {
     super();
     this.tasks = JSON.parse(localStorage.getItem("tasks")) || [];
