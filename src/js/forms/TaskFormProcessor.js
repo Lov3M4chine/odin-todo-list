@@ -1,10 +1,12 @@
 export default class TaskFormProcessor {
-    constructor(taskRepository, renderer, formatter, formHandler) {
-      this.taskRepository = taskRepository;
-      this.renderer = renderer;
-      this.formatter = formatter;
-      this.formHandler = formHandler;
-    }
+  constructor(taskRepository, renderer, taskHtmlContainer, formatter, formHandler) {
+    this.taskRepository = taskRepository;
+    this.renderer = renderer;
+    this.taskHtmlContainer = taskHtmlContainer;
+    this.formatter = formatter;
+    this.formHandler = formHandler;
+  }
+  
   
     createTask({ name, description, dueDate, priority, projectName }) {
       return { name, description, dueDate, priority, projectName };
@@ -23,9 +25,9 @@ export default class TaskFormProcessor {
   
         const task = this.createTask({ name, description, dueDate, priority, projectName });
         this.taskRepository.addTask(task);
-        this.renderer.render(this.taskRepository.getTasks(), this.formatter);
-  
-        this.formHandler.hide(); // Hide the form after the task is submitted
+        this.renderer.render(this.taskRepository.getTasks(), this.taskHtmlContainer, this.formatter);
+    
+        this.formHandler.hide();
       });
     }
   }

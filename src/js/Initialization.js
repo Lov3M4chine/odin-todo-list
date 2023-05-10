@@ -8,7 +8,7 @@ const taskRepository = new LocalStorageTaskRepository();
 const tasks = taskRepository.getTasks();
 const taskHtmlContainer = document.getElementById("task-list");
 const formatter = new HtmlFormatter();
-const addTaskButton = document.getElementById("add-task");
+const addTaskButton = document.getElementById("add-task-button");
 const renderer = new HtmlRenderer();
 const formHandler = new TaskFormHandler("task-form");
 
