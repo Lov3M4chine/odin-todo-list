@@ -46,6 +46,7 @@ export default class TaskFormProcessor {
     this.hideForm();
     console.log("Task form processed")
     initialize();
+    console.log("Reinitialized")
   }
 }
 
