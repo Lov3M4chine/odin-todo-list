@@ -17,7 +17,7 @@
     <div class="flex">
 
       <!-- Left Container -->
-      <div class="text-slate-900 flex flex-col gap-2 m-2">
+      <div class="text-slate-900 flex flex-col gap-2 m-2 min-h-screen">
         <!-- Filter Buttons -->
         <div class="flex flex-col justify-center items-center border-slate-900 border-2 rounded p-2">
           <p class="underline">Filter:</p>
@@ -26,7 +26,7 @@
           <button>Month</button>
         </div>
         <!-- Projects -->
-        <div class="flex flex-col justify-start items-center border-slate-900 border-2 rounded min-h-screen p-2">
+        <div class="flex flex-col justify-start items-center border-slate-900 border-2 rounded p-2">
           <!-- Add Projects -->
           <div class="flex">
             <p class="underline">Projects:</p>
@@ -37,10 +37,20 @@
             <button class="whitespace-nowrap">Project 2</button>
           </div>
         </div>
+        <!-- Completed -->
+        <div class="flex flex-col justify-start items-center border-slate-900 border-2 rounded p-2">
+          <div class="flex">
+            <p class="underline">Completed:</p>
+          </div>
+          <div class="flex flex-col">
+            <button class="whitespace-nowrap">Project 1</button>
+            <button class="whitespace-nowrap">Project 2</button>
+          </div>
+        </div>
       </div>
 
       <!-- Right Container -->
-      <div class="flex-grow p-3 bg-background bg-groove-paper bg-repeat rounded">
+      <div class="flex-grow p-3 bg-background bg-paper bg-repeat rounded">
         <!-- Add Task Form -->
         <form id="task-form" class="flex flex-col items-center justify-center absolute bg-slate-900 p-10 z-10 hidden">
           <label for="name">Name:</label>
@@ -50,7 +60,7 @@
           <textarea id="description" name="description" class="form-input"></textarea><br>
         
           <label for="due-date">Due Date:</label>
-          <input type="date" id="due-date" name="due-date" required class="form-input"><br>
+          <input type="date" id="due-date" name="due-date" class="form-input"><br>
         
           <label for="priority">Priority:</label>
           <select id="priority" name="priority" class="form-input">
@@ -62,7 +72,7 @@
           <label for="project-name">Project Name:</label>
           <input type="text" id="project-name" name="project-name" class="form-input"><br>
         
-          <button id="add-task" type="submit" class="button">Add Task</button>
+          <button id="submit-task" type="submit" class="button">Add Task</button>
         </form>
         
         <!-- Add Task -->
@@ -74,13 +84,28 @@
         <div id="task-list" class="flex flex-col p-2">
           <div class="flex flex-col bg-background bg-denim bg-repeat text-white p-1 -skew-x-2 rounded">
             <div class="flex justify-between">
-              <p class="font-swankyMooMoo">Clean House</p>
+              <div class="flex gap-1">
+                <input type="checkbox" name="completed" id="checkbox">
+                <p class="font-swankyMooMoo text-lg">Clean House</p>
+              </div>
               <p>Due: 2023-05-09</p>
             </div>
-            <div class="font-swankyMooMoo p-3 border-slate-200 border-2 rounded">
-              <p><span class="underline">Description:</span> This is a short test description. This is a short test description This is a short test description This is a short test descriptionThis is a short test descriptionThis is a short test descriptionThis is a short test description</p>
-              <p><span class="underline">Priority:</span> Medium</p>
-              <p><span class="underline">Project:</span> Household</p>
+            <div class="font-swankyMooMoo p-3 pb-2 border-slate-200 border-2 rounded">
+              <p>
+                <span class="underline">Description:</span>
+                This is a short test description. This is a short test description This is a short test description This is a short test descriptionThis is a short test descriptionThis is a short test descriptionThis is a short test description
+              </p>
+              <p>
+                <span class="underline">Priority:</span> 
+                Medium
+              </p>
+              <div class="flex justify-between">
+                <p>
+                  <span class="underline">Project:</span> 
+                  Household
+                </p>
+                <button>Edit</button>
+              </div>
             </div>
           </div>
         </div>

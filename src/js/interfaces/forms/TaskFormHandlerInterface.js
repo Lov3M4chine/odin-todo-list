@@ -1,4 +1,4 @@
-export default class FormHandlerInterface {
+export default class TaskFormHandlerInterface {
     show() {
       throw new Error("Not implemented");
     }

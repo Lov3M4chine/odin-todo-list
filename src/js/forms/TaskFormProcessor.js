@@ -1,3 +1,6 @@
+import Task from "../Task";
+import { initialize } from '../Initialization.js';
+
 export default class TaskFormProcessor {
   constructor(taskRepository, renderer, taskHtmlContainer, formatter, formHandler) {
     this.taskRepository = taskRepository;
@@ -6,29 +9,44 @@ export default class TaskFormProcessor {
     this.formatter = formatter;
     this.formHandler = formHandler;
   }
+
+  createTask() {
+    const taskForm = document.getElementById("task-form");
+    const name = taskForm.elements["name"].value || "none";
+    const description = taskForm.elements["description"].value || "none";
+    const dueDate = taskForm.elements["due-date"].value || "none";
+    const priority = taskForm.elements["priority"].value || "none";
+    const projectName = taskForm.elements["project-name"].value || "none";
   
-  
-    createTask({ name, description, dueDate, priority, projectName }) {
-      return { name, description, dueDate, priority, projectName };
-    }
-  
-    processTaskForm(taskForm) {
-      taskForm.addEventListener("submit", (event) => {
-        event.preventDefault();
-  
-        const form = event.target;
-        const name = form.elements["name"].value;
-        const description = form.elements["description"].value;
-        const dueDate = form.elements["due-date"].value;
-        const priority = form.elements["priority"].value;
-        const projectName = form.elements["project-name"].value;
-  
-        const task = this.createTask({ name, description, dueDate, priority, projectName });
-        this.taskRepository.addTask(task);
-        this.renderer.render(this.taskRepository.getTasks(), this.taskHtmlContainer, this.formatter);
-    
-        this.formHandler.hide();
-      });
-    }
+    const task = new Task(name, description, dueDate, priority, projectName);
+    return task;
   }
+  
+
+  addTaskToRepository(task) {
+    this.taskRepository.addTask(task);
+  }
+
+  renderNewTask() {
+    this.renderer.render(this.taskRepository.getTasks(), this.taskHtmlContainer, this.formatter);
+  }
+
+  hideForm() {
+    this.formHandler.hide();
+  }
+
+  processTaskForm() {
+    event.preventDefault();
+    const task = this.createTask();
+    console.log("Task created")
+    this.addTaskToRepository(task);
+    console.log("Task added to repo")
+    this.renderNewTask();
+    console.log("Tasklist rendered")
+    this.hideForm();
+    console.log("Task form processed")
+    initialize();
+  }
+}
+
   

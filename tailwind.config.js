@@ -13,6 +13,7 @@ module.exports = {
           'tactile-noise': "url('../imgs/tactile_noise.webp')",
           'micro-carbon': "url('../imgs/micro_carbon.png')",
           'groove-paper': "url('../imgs/groovepaper.png')",
+          'paper': "url('../imgs/paper.webp')",
         }),
       },
     },

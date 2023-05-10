@@ -1,16 +1,17 @@
-import FormHandlerInterface from "../interfaces/forms/FormHandlerInterface.js";
+import TaskFormHandlerInterface from "../interfaces/forms/TaskFormHandlerInterface.js";
 
-export default class TaskFormHandler extends FormHandlerInterface {
-  constructor(formId) {
-    super();
-    this.form = document.getElementById(formId);
-  }
+export default class TaskFormHandler extends TaskFormHandlerInterface {
+constructor() {
+super();
+}
 
-  show() {
-    this.form.classList.remove("hidden");
-  }
+show() {
+this.taskform = document.getElementById("task-form");
+this.taskform.classList.remove("hidden");
+}
 
-  hide() {
-    this.form.classList.add("hidden");
-  }
+hide() {
+this.taskform = document.getElementById("task-form");
+this.taskform.classList.add("hidden");
+}
 }
