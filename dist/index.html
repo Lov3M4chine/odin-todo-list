@@ -14,27 +14,27 @@
     </div>
 
     <!-- Content -->
-    <div class="flex gap-3">
+    <div class="flex">
 
       <!-- Left Container -->
-      <div class="text-slate-900 flex flex-col gap-2">
+      <div class="text-slate-900 flex flex-col gap-2 m-2">
         <!-- Filter Buttons -->
-        <div class="flex flex-col justify-center items-center border-slate-900 border-2 rounded">
+        <div class="flex flex-col justify-center items-center border-slate-900 border-2 rounded p-2">
           <p class="underline">Filter:</p>
           <button>Today</button>
-          <button>This Week</button>
-          <button>This Month</button>
+          <button>Week</button>
+          <button>Month</button>
         </div>
         <!-- Projects -->
-        <div class="flex flex-col justify-start items-center border-slate-900 border-2 rounded min-h-screen">
+        <div class="flex flex-col justify-start items-center border-slate-900 border-2 rounded min-h-screen p-2">
           <!-- Add Projects -->
           <div class="flex">
             <p class="underline">Projects:</p>
           </div>
           <!-- Projects List -->
           <div class="flex flex-col">
-            <button>Project 1</button>
-            <button>Project 2</button>
+            <button class="whitespace-nowrap">Project 1</button>
+            <button class="whitespace-nowrap">Project 2</button>
           </div>
         </div>
       </div>
@@ -72,9 +72,16 @@
         </div>
         <!-- Task List -->
         <div id="task-list" class="flex flex-col p-2">
-          <div class="flex justify-between bg-background bg-denim bg-repeat text-white p-1">
-            <p class="font-swankyMooMoo">Clean House</p>
-            <p>Due: 2023-05-09</p>
+          <div class="flex flex-col bg-background bg-denim bg-repeat text-white p-1 -skew-x-2 rounded">
+            <div class="flex justify-between">
+              <p class="font-swankyMooMoo">Clean House</p>
+              <p>Due: 2023-05-09</p>
+            </div>
+            <div class="font-swankyMooMoo p-3 border-slate-200 border-2 rounded">
+              <p><span class="underline">Description:</span> This is a short test description. This is a short test description This is a short test description This is a short test descriptionThis is a short test descriptionThis is a short test descriptionThis is a short test description</p>
+              <p><span class="underline">Priority:</span> Medium</p>
+              <p><span class="underline">Project:</span> Household</p>
+            </div>
           </div>
         </div>
       </div>

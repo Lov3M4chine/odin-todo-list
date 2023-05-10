@@ -41,3 +41,5 @@ Form.js: The processTaskForm function in this module handles form submission, cr
 Credits
 Patterns:
 https://www.toptal.com/designers/subtlepatterns
+Fonts:
+https://fonts.google.com/
