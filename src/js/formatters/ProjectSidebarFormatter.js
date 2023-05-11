@@ -4,6 +4,7 @@ export default class ProjectSidebarFormatter {
           projectSidebarButton.textContent = `${project.projectName}`;
           projectSidebarButton.className = "whitespace-nowrap project-sidebar-button"
       
-          return projectSidebarButton;
+          const formattedProjectsSidebar = projectSidebarButton
+          return formattedProjectsSidebar;
       };
   }

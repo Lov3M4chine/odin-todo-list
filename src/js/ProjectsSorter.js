@@ -1,5 +1,5 @@
-import LocalStorageTaskRepositoryInstance from "./data/LocalStorageTaskRepositoryInstance.js";
-const taskRepository = LocalStorageTaskRepositoryInstance;
+import LocalStorageTaskRepository from "./data/LocalStorageTaskRepository.js";
+const taskRepository = new LocalStorageTaskRepository();
 const tasks = taskRepository.getTasks();
 
 

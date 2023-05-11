@@ -1,11 +1,9 @@
-import ProjectFormatterInterface from "../interfaces/formatters/ProjectFormatterInterface.js";
+export default function projectFormatter (project) {
+    const elements = {};
 
-export default class ProjectFormatter extends ProjectFormatterInterface {
-  format(project) {
-        const projectName = document.createElement("div");
-        projectName.textContent = `${project.projectName}`;
-    
-        return projectName;
-    };
-}
+    elements.projectName = document.createElement("div");
+    elements.projectName.textContent = `${project.projectName}`;
+   
+    return elements;
+};
 
