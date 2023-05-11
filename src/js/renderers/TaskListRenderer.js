@@ -13,7 +13,6 @@ export default class TaskListRenderer extends TaskListRendererInterface {
     });
 
     for (let project of projects) {
-      console.log(projects)
       const projectLabel = projectFormatter.format(project);
       container.appendChild(projectLabel);
       for (let task of project.tasks) {

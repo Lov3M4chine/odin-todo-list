@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"initialize\": () => (/* binding */ initialize)\n/* harmony export */ });\n/* harmony import */ var _data_LocalStorageTaskRepositoryInstance_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./data/LocalStorageTaskRepositoryInstance.js */ \"./src/js/data/LocalStorageTaskRepositoryInstance.js\");\n/* harmony import */ var _formatters_TaskListFormatter_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./formatters/TaskListFormatter.js */ \"./src/js/formatters/TaskListFormatter.js\");\n/* harmony import */ var _formatters_ProjectFormatter_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./formatters/ProjectFormatter.js */ \"./src/js/formatters/ProjectFormatter.js\");\n/* harmony import */ var _renderers_TaskListRenderer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./renderers/TaskListRenderer.js */ \"./src/js/renderers/TaskListRenderer.js\");\n/* harmony import */ var _EventListeners_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./EventListeners.js */ \"./src/js/EventListeners.js\");\n/* harmony import */ var _ProjectsSorter_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ProjectsSorter.js */ \"./src/js/ProjectsSorter.js\");\n\n\n\n\n\n\nconst taskListHtmlContainer = document.getElementById(\"task-list\");\nconst taskRepository = _data_LocalStorageTaskRepositoryInstance_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"];\nconst taskListFormatter = new _formatters_TaskListFormatter_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"]();\nconst taskListRenderer = new _renderers_TaskListRenderer_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"]();\nconst projectFormatter = new _formatters_ProjectFormatter_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"]();\nconst tasks = taskRepository.getTasks();\nconst projects = (0,_ProjectsSorter_js__WEBPACK_IMPORTED_MODULE_5__.groupTasksByProject)(tasks);\nfunction initialize() {\n  taskListRenderer.render(tasks, projects, taskListHtmlContainer, taskListFormatter, projectFormatter);\n  (0,_EventListeners_js__WEBPACK_IMPORTED_MODULE_4__.attachEventListeners)();\n}\n\n//# sourceURL=webpack://todo-list/./src/js/Initialization.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"initialize\": () => (/* binding */ initialize)\n/* harmony export */ });\n/* harmony import */ var _data_LocalStorageTaskRepositoryInstance_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./data/LocalStorageTaskRepositoryInstance.js */ \"./src/js/data/LocalStorageTaskRepositoryInstance.js\");\n/* harmony import */ var _formatters_TaskListFormatter_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./formatters/TaskListFormatter.js */ \"./src/js/formatters/TaskListFormatter.js\");\n/* harmony import */ var _formatters_ProjectFormatter_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./formatters/ProjectFormatter.js */ \"./src/js/formatters/ProjectFormatter.js\");\n/* harmony import */ var _renderers_TaskListRenderer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./renderers/TaskListRenderer.js */ \"./src/js/renderers/TaskListRenderer.js\");\n/* harmony import */ var _renderers_ProjectsSidebarRenderer_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./renderers/ProjectsSidebarRenderer.js */ \"./src/js/renderers/ProjectsSidebarRenderer.js\");\n/* harmony import */ var _EventListeners_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./EventListeners.js */ \"./src/js/EventListeners.js\");\n/* harmony import */ var _ProjectsSorter_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ProjectsSorter.js */ \"./src/js/ProjectsSorter.js\");\n\n\n\n\n\n\n\nconst taskListHtmlContainer = document.getElementById(\"task-list\");\nconst taskRepository = _data_LocalStorageTaskRepositoryInstance_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"];\nconst taskListFormatter = new _formatters_TaskListFormatter_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"]();\nconst taskListRenderer = new _renderers_TaskListRenderer_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"]();\nconst projectSidebarRenderer = new _renderers_ProjectsSidebarRenderer_js__WEBPACK_IMPORTED_MODULE_4__[\"default\"]();\nconst projectFormatter = new _formatters_ProjectFormatter_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"]();\nconst tasks = taskRepository.getTasks();\nconst projects = (0,_ProjectsSorter_js__WEBPACK_IMPORTED_MODULE_6__.groupTasksByProject)(tasks);\nfunction initialize() {\n  taskListRenderer.render(tasks, projects, taskListHtmlContainer, taskListFormatter, projectFormatter);\n  projectSidebarRenderer.render(projects);\n  (0,_EventListeners_js__WEBPACK_IMPORTED_MODULE_5__.attachEventListeners)();\n}\n\n//# sourceURL=webpack://todo-list/./src/js/Initialization.js?");
 
 /***/ }),
 
@@ -77,6 +77,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ ProjectFormatter)\n/* harmony export */ });\n/* harmony import */ var _interfaces_formatters_ProjectFormatterInterface_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../interfaces/formatters/ProjectFormatterInterface.js */ \"./src/js/interfaces/formatters/ProjectFormatterInterface.js\");\n\nclass ProjectFormatter extends _interfaces_formatters_ProjectFormatterInterface_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"] {\n  format(project) {\n    const projectName = document.createElement(\"div\");\n    projectName.textContent = `${project.projectName}`;\n    return projectName;\n  }\n}\n\n//# sourceURL=webpack://todo-list/./src/js/formatters/ProjectFormatter.js?");
+
+/***/ }),
+
+/***/ "./src/js/formatters/ProjectSidebarFormatter.js":
+/*!******************************************************!*\
+  !*** ./src/js/formatters/ProjectSidebarFormatter.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ ProjectSidebarFormatter)\n/* harmony export */ });\nclass ProjectSidebarFormatter {\n  format(project) {\n    const projectSidebarButton = document.createElement(\"button\");\n    projectSidebarButton.textContent = `${project.projectName}`;\n    projectSidebarButton.className = \"whitespace-nowrap\";\n    return projectSidebarButton;\n  }\n}\n\n//# sourceURL=webpack://todo-list/./src/js/formatters/ProjectSidebarFormatter.js?");
 
 /***/ }),
 
@@ -160,6 +170,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/js/interfaces/renderers/ProjectSidebarRendererInterface.js":
+/*!************************************************************************!*\
+  !*** ./src/js/interfaces/renderers/ProjectSidebarRendererInterface.js ***!
+  \************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ ProjectSidebarRendererInterface)\n/* harmony export */ });\nclass ProjectSidebarRendererInterface {\n  render(projects) {\n    throw new Error(\"Not implemented\");\n  }\n}\n\n//# sourceURL=webpack://todo-list/./src/js/interfaces/renderers/ProjectSidebarRendererInterface.js?");
+
+/***/ }),
+
 /***/ "./src/js/interfaces/renderers/TaskDetailsRendererInterface.js":
 /*!*********************************************************************!*\
   !*** ./src/js/interfaces/renderers/TaskDetailsRendererInterface.js ***!
@@ -180,6 +200,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/js/renderers/ProjectsSidebarRenderer.js":
+/*!*****************************************************!*\
+  !*** ./src/js/renderers/ProjectsSidebarRenderer.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ projectSidebarRenderer)\n/* harmony export */ });\n/* harmony import */ var _formatters_ProjectSidebarFormatter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../formatters/ProjectSidebarFormatter */ \"./src/js/formatters/ProjectSidebarFormatter.js\");\n/* harmony import */ var _interfaces_renderers_ProjectSidebarRendererInterface__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../interfaces/renderers/ProjectSidebarRendererInterface */ \"./src/js/interfaces/renderers/ProjectSidebarRendererInterface.js\");\n\n\nconst projectSidebarFormatter = new _formatters_ProjectSidebarFormatter__WEBPACK_IMPORTED_MODULE_0__[\"default\"]();\nconst container = document.getElementById(\"projects-list\");\nclass projectSidebarRenderer extends _interfaces_renderers_ProjectSidebarRendererInterface__WEBPACK_IMPORTED_MODULE_1__[\"default\"] {\n  render(projects) {\n    for (let project of projects) {\n      const projectSideBarButton = projectSidebarFormatter.format(project);\n      console.log(projectSideBarButton);\n      container.appendChild(projectSideBarButton);\n    }\n  }\n}\n\n//# sourceURL=webpack://todo-list/./src/js/renderers/ProjectsSidebarRenderer.js?");
+
+/***/ }),
+
 /***/ "./src/js/renderers/TaskDetailsRenderer.js":
 /*!*************************************************!*\
   !*** ./src/js/renderers/TaskDetailsRenderer.js ***!
@@ -196,7 +226,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ TaskListRenderer)\n/* harmony export */ });\n/* harmony import */ var _interfaces_renderers_TaskListRendererInterface_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../interfaces/renderers/TaskListRendererInterface.js */ \"./src/js/interfaces/renderers/TaskListRendererInterface.js\");\n\nclass TaskListRenderer extends _interfaces_renderers_TaskListRendererInterface_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"] {\n  render(tasks, projects, container, taskFormatter, projectFormatter) {\n    container.innerHTML = \"\";\n    tasks.forEach(task => {\n      if (task.projectName === \"none\") {\n        const taskHtml = taskFormatter.format(task);\n        container.appendChild(taskHtml);\n      }\n    });\n    for (let project of projects) {\n      console.log(projects);\n      const projectLabel = projectFormatter.format(project);\n      container.appendChild(projectLabel);\n      for (let task of project.tasks) {\n        const taskHtml = taskFormatter.format(task);\n        container.appendChild(taskHtml);\n      }\n    }\n    ;\n  }\n}\n\n//# sourceURL=webpack://todo-list/./src/js/renderers/TaskListRenderer.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ TaskListRenderer)\n/* harmony export */ });\n/* harmony import */ var _interfaces_renderers_TaskListRendererInterface_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../interfaces/renderers/TaskListRendererInterface.js */ \"./src/js/interfaces/renderers/TaskListRendererInterface.js\");\n\nclass TaskListRenderer extends _interfaces_renderers_TaskListRendererInterface_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"] {\n  render(tasks, projects, container, taskFormatter, projectFormatter) {\n    container.innerHTML = \"\";\n    tasks.forEach(task => {\n      if (task.projectName === \"none\") {\n        const taskHtml = taskFormatter.format(task);\n        container.appendChild(taskHtml);\n      }\n    });\n    for (let project of projects) {\n      const projectLabel = projectFormatter.format(project);\n      container.appendChild(projectLabel);\n      for (let task of project.tasks) {\n        const taskHtml = taskFormatter.format(task);\n        container.appendChild(taskHtml);\n      }\n    }\n    ;\n  }\n}\n\n//# sourceURL=webpack://todo-list/./src/js/renderers/TaskListRenderer.js?");
 
 /***/ }),
 
