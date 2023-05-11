@@ -19,7 +19,10 @@ const projects = groupTasksByProject(tasks);
 
 export function initialize() {
   taskListRenderer.render(tasks, projects, taskListHtmlContainer, taskListFormatter, projectFormatter);
+  console.log("taskList rendered");
   projectSidebarRenderer.render(projects);
-  attachEventListeners();
+  console.log("projectSidebar rendered");
+  attachEventListeners(projects, taskListHtmlContainer);
+  console.log("event listeners attached");
 }
 

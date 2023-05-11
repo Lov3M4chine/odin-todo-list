@@ -1,7 +1,7 @@
 import ProjectSidebarFormatter from "../formatters/ProjectSidebarFormatter";
 import ProjectSidebarRendererInterface from "../interfaces/renderers/ProjectSidebarRendererInterface"
 const projectSidebarFormatter = new ProjectSidebarFormatter();
-const container = document.getElementById("projects-list")
+const container = document.getElementById("projects-list");
 
 export default class projectSidebarRenderer extends ProjectSidebarRendererInterface {
     render(projects) {

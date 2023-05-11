@@ -3,7 +3,7 @@ const taskRepository = LocalStorageTaskRepositoryInstance;
 const tasks = taskRepository.getTasks();
 
 
-export function groupTasksByProject(tasks) {
+export function groupTasksByProject() {
   const groups = {};
   tasks.forEach((task) => {
     const projectName = task.projectName;
