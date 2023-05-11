@@ -1,13 +1,15 @@
 import Task from "../Task";
 import { initialize } from '../Initialization.js';
+import { groupTasksByProject } from "../ProjectsSorter";
 
 export default class TaskFormProcessor {
-  constructor(taskRepository, renderer, taskHtmlContainer, formatter, formHandler) {
+  constructor(taskRepository, taskListRenderer, taskListHtmlContainer, taskListFormatter, projectFormatter, taskformHandler) {
     this.taskRepository = taskRepository;
-    this.renderer = renderer;
-    this.taskHtmlContainer = taskHtmlContainer;
-    this.formatter = formatter;
-    this.formHandler = formHandler;
+    this.renderer = taskListRenderer;
+    this.taskListHtmlContainer = taskListHtmlContainer;
+    this.taskListFormatter = taskListFormatter;
+    this.projectFormatter = projectFormatter;
+    this.taskformHandler = taskformHandler;
   }
 
   createTask() {
@@ -28,25 +30,24 @@ export default class TaskFormProcessor {
   }
 
   renderNewTask() {
-    this.renderer.render(this.taskRepository.getTasks(), this.taskHtmlContainer, this.formatter);
+    const tasks = this.taskRepository.getTasks();
+    const projects = groupTasksByProject(tasks);
+    this.renderer.render(tasks, projects, this.taskListHtmlContainer, this.taskListFormatter, this.projectFormatter);
   }
+
+  
 
   hideForm() {
-    this.formHandler.hide();
+    this.taskformHandler.hide();
   }
 
-  processTaskForm() {
+  processTaskForm(event) {
     event.preventDefault();
     const task = this.createTask();
-    console.log("Task created")
     this.addTaskToRepository(task);
-    console.log("Task added to repo")
     this.renderNewTask();
-    console.log("Tasklist rendered")
     this.hideForm();
-    console.log("Task form processed")
     initialize();
-    console.log("Reinitialized")
   }
 }
 
